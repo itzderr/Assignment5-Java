@@ -6,6 +6,7 @@ package ca.ciccc;
  * @author Derrick Park
  */
 public interface VCPriorityQueue<K extends Comparable, V> {
+
     /**
      * Returns the number of items in the priority queue.
      * @return number of items
