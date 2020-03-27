@@ -1,7 +1,5 @@
 package ca.ciccc;
 
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 public class DLPriorityQueue<K extends Comparable, V > implements VCPriorityQueue<K, V> {
@@ -10,7 +8,7 @@ public class DLPriorityQueue<K extends Comparable, V > implements VCPriorityQueu
 
         public DLPriorityQueue(){
 
-          // queue = Collections.synchronizedList(new LinkedList<>());
+          // queue = Collections.synchronizedList(new D);
 
         }
 
@@ -44,6 +42,28 @@ class Dll{
         tail.next = null;
 
     }
+
+    public Node getNode(int i){
+        if (i < 0 || i > size()){
+            throw new IndexOutOfBoundsException();
+        }
+        else{
+            Node current = head;
+            int count = 0;
+
+            while (current != null){
+                if(count == i)
+                    return current;
+                    count++;
+                    current = current.next;
+
+            }
+        }
+        return null;
+    }
+
+
+
 }
 Dll dll = new Dll();
 
@@ -70,6 +90,7 @@ Dll dll = new Dll();
         /**
         --
          */
+
         @Override
         public Entry<K, V> peek() {
             if (isEmpty()){
