@@ -27,6 +27,8 @@ public interface VCPriorityQueue<K extends Comparable, V> {
      */
     Entry<K,V> enqueue(K key, V value) throws IllegalArgumentException;
 
+    boolean isEmty();
+
     /**
      * Returns (but does not remove) an entry with minimal key.
      * @return entry having a minimal key (or null if empty)
